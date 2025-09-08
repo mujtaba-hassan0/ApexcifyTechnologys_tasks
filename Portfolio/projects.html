@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+        /* Type cursor */
+        .type-cursor::after {
+            content: "|";
+            display: inline-block;
+            margin-left: 2px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+    <!-- nav for small device -->
+    <img id="downarrow" 
+     src="images/downicon.png" 
+     alt="" 
+     class="w-6 h-6 cursor-pointer block md:hidden mx-auto" />
+    <div id="topnav"  class="w-full flex-col justify-center p-4 bg-gray-900/60 border-b border-white/5 sticky top-0 z-10 h-auto hidden">
+        <div class="flex flex-col">
+            <div class="w-full flex justify-start">
+                <img id="crossicon" src="images/cross.png" alt="" class="w-4 h-4 cursor-pointer">
+            </div>
+            <h1 class="text-lg font-semibold">Mujtaba Hassan</h1>
+            <p class="text-sm text-gray-400 inline-block">Developer</p>
+
+        </div>
+
+        <div class="flex flex-col">
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="index.html">Home</a>
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="about.html">About</a>
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="projects.html">Projects</a>
+                <!-- <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="blog.html">Blog</a> -->
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="contact.html">Contact</a>
+
+        </div>
+        
+    </div>
+    <div class="min-h-screen flex ">
+        <aside
+            class="hidden md:flex w-64 flex-col items-center justify-center gap-4 bg-gray-900/60 border-r border-white/5 p-4 sticky top-0 h-screen">
+            <div class="width-[90%] h-[80%] border-2 border-cyan-700 rounded-2xl p-2 flex flex-col items-center justify-center gap-2">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400"></div>
+            <h1 class="text-lg font-semibold">Mujtaba Hassan</h1>
+            <p class="text-sm text-gray-400 type-cursor" id="skillRotator"></p>
+            <hr class="w-full border-white/12 my-4" />
+            <!-- contact info -->
+            <div class="w-full flex flex-col gap-3">
+                <!-- contact info card 1 -->
+                <div class="w-fit h-16 flex items-center gap-1 hover:scale-105 transition">
+                    <img src="images/email.png" alt="" class="w-8 h-8 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white"><a
+                            href="mailto:mujtabahaxxan110@gmail.com">mujtabahassan326@gmail.com</a></p>
+                </div>
+                <!-- contact info card 2 -->
+                <div class="w-fit h-16 flex items-center gap-1 hover:scale-105 transition">
+                    <img src="images/phone.png" alt="" class="w-8 h-8 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white">+92 309-3845919</p>
+                </div>
+                <!-- contact info card 3 -->
+                <div class="w-fit h-16 flex items-center gap-0 hover:scale-105 transition">
+                    <img src="images/linkdin.png" alt="" class="w-10 h-10 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white"><a
+                            href="https://www.linkedin.com/in/mujtaba-hassan-4b43b0247/" target="blank">LinkdIn</a></p>
+                </div>
+
+            </div>
+</div>
+        </aside>
+       
+<main class="flex-1 pt-0 p-4 md:p-10 justify-between items-center">
+    <nav class="flex items-center justify-between gap-6 text-sm text-gray-400 ">
+               
+                <div class="w-full  hidden md:flex items-center gap-4 justify-end">
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="index.html">Home</a>
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="about.html">About</a>
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="projects.html">Projects</a>
+                <!-- <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="blog.html">Blog</a> -->
+                <a class="hover:text-white transition border rounded-xl p-1 px-2 hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="contact.html">Contact</a>
+                </div>
+            </nav>
+  <div class="min-h-screen p-6 md:p-10">
+    <header>
+      <h2 class="text-3xl md:text-4xl font-bold">Projects</h2>
+      <p class="mt-2 text-gray-400">Explore my work by category</p>
+    </header>
+
+    <!-- Filter Buttons -->
+    <div class="mt-8 flex gap-4 flex-wrap">
+      <button class="filter-btn px-4 py-2 rounded-xl bg-blue-500 text-white text-sm font-medium" data-filter="all">
+        All
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-xl bg-white/10 text-sm font-medium hover:bg-blue-500 hover:text-white transition" data-filter="single">
+        Single-Page Web
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-xl bg-white/10 text-sm font-medium hover:bg-blue-500 hover:text-white transition" data-filter="multi">
+        Multi-Page Web
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-xl bg-white/10 text-sm font-medium hover:bg-blue-500 hover:text-white transition" data-filter="js">
+        JavaScript
+      </button>
+      <button class="filter-btn px-4 py-2 rounded-xl bg-white/10 text-sm font-medium hover:bg-blue-500 hover:text-white transition" data-filter="java">
+        Java
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6" id="projectsGrid">
+      <!-- single-page web start here -->
+      <div class="project-card single bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/single.png" alt="Project 1" class="w-full h-[65%]  object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">💼 My Travel Blog</h3>
+          <p class="text-gray-400 text-sm">Single-page web using HTML, CSS</p>
+        </div>
+      </div>
+
+
+      <div class="project-card single bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/single1.png" alt="Project 1" class="w-full h-[65%] object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">🖥️ Brand Landing Page</h3>
+          <p class="text-gray-400 text-sm">Single-page web using React</p>
+        </div>
+      </div>
+
+      
+      <div class="project-card single bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/single2.png" alt="Project 1" class="w-full h-[65%] object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">👟 Shoe Brand Page</h3>
+          <p class="text-gray-400 text-sm">Single-page web using HTML, Tailwind CSS</p>
+        </div>
+      </div>
+      <!--single-page web end here -->
+
+      <!-- multi-page web start here -->
+          
+      <div class="project-card multi bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/multi-page2.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">🏠 Home Town Website</h3>
+          <p class="text-gray-400 text-sm">Multi-page site having multiple pages like recipe, street foods etc. Built with HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+
+      
+      <div class="project-card multi bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/multi-page.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">🍽 Fork & Flames Restaurant</h3>
+          <p class="text-gray-400 text-sm">A website which showcase my hometown famous places, foods, and culture. Built with HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+      <!-- multi-page web end here -->
+      <!-- javascript programs start here  -->
+        <div class="project-card js bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/app.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">🌤️ Weather App</h3>
+          <p class="text-gray-400 text-sm">A simple, responsive weather application built with HTML, JavaScript, and Tailwind CSS. It allows users to check real-time weather information for any city using the OpenWeatherMap API.</p>
+        </div>
+      </div>
+
+      
+        <div class="project-card js bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/JavaScript1.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">💱 Currency Converter</h3>
+          <p class="text-gray-400 text-sm">A simple, responsive currency converter application built with HTML, JavaScript. It allows users to convert amounts between different currencies using the ExchangeRate API.</p>
+        </div>
+      </div>
+
+      <div class="project-card js bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/JavaScript.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">⏳ Count-Down Timer</h3>
+          <p class="text-gray-400 text-sm">A simple, responsive count-down timer application built with HTML, JavaScript. It allows users to set a timer for a specific duration and alerts them when the time is up.</p>
+        </div>
+      </div>
+
+      
+      <div class="project-card js bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <img src="projects/rock.png" alt="Project 2" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">✂ Rock Paper Scissors</h3>
+          <p class="text-gray-400 text-sm">A simple, responsive Rock Paper Scissors game built with HTML, JavaScript. It allows users to play against the computer and keeps track of the score.</p>
+        </div>
+      </div>
+      
+
+      <!-- java programs start here  -->
+      <div class="project-card java bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <div class="p-4 flex flex-col items-start justify-between h-full">
+          <h3 class="text-lg font-semibold">😀 Mood Tracker</h3>
+          <p class="text-gray-400 text-sm">The Mood Tracker is a Java console-based application that allows users to record their mood, along with the date and time, into a text file. </p>
+          <button class="mt-2"><a class="hover:underline hover:text-blue-500" href="https://github.com/mujtaba-hassan0/Mood-Tracker-Program">View Project</a></button>
+        </div>
+      </div>
+
+
+      <div class="project-card java bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <div class="p-4 flex flex-col items-start justify-between h-full">
+          <h3 class="text-lg font-semibold">📖 Book Collection</h3>
+          <p class="text-gray-400 text-sm">The Book Collection is a Java console-based application that allows users to manage a collection of books, including adding, removing, and viewing book details. </p>
+          <button class="mt-2"><a class="hover:underline hover:text-blue-500" href="https://github.com/mujtaba-hassan0/Book_Collection">View Project</a></button>
+        </div>
+      </div>
+
+
+
+      <div class="project-card java bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:scale-105 transition transform cursor-pointer">
+        <div class="p-4 flex flex-col items-start justify-between h-full">
+          <h3 class="text-lg font-semibold">⚙ Java Swing Login System</h3>
+          <p class="text-gray-400 text-sm">A simple Java Swing-based application that simulates a Signup & Login system using dialog boxes (JOptionPane).
+The project demonstrates basic authentication logic, OOP principles, and GUI interaction with users.</p>
+          <button class="mt-2"><a class="hover:underline hover:text-blue-500" href="https://github.com/mujtaba-hassan0/Login-System/tree/main/Login-System">View Project</a></button>
+        </div>
+      </div>
+      <!-- java programs end here  -->
+    </div>
+  </div>
+
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-card');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        // Reset button styles
+        buttons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+        buttons.forEach(btn => btn.classList.add('bg-white/10', 'text-sm', 'font-medium'));
+
+        // Active button style
+        button.classList.remove('bg-white/10');
+        button.classList.add('bg-blue-500', 'text-white');
+
+        // Filter projects
+        projects.forEach(project => {
+          if (filter === 'all' || project.classList.contains(filter)) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+   <script>
+       const downarrow = document.getElementById('downarrow');
+       const crossicon = document.getElementById('crossicon');
+       const topnav = document.getElementById('topnav');
+        let isOpen= false;
+
+
+        downarrow.addEventListener("click",()=>{
+            if(!isOpen){
+             downarrow.style.display="none";  
+             topnav.style.display="block"; 
+             isOpen=true;
+            }
+
+        });
+
+        crossicon.addEventListener("click",()=>{
+            if(isOpen){
+             downarrow.style.display="block";  
+             topnav.style.display="none"; 
+             isOpen=false;
+            }
+
+        });
+
+    </script>
+     <script>
+
+        const el = document.getElementById('skillRotator');
+        // const elAside = document.getElementById("skillRotatorAside");
+
+        const skills = [
+            'Web Development',
+            'Java Programmer',
+            'Data Structures & Algorithms',
+            'Spring Boot & REST APIs',
+            'Problem Solving'];
+
+        const typeSpeed = 55;      // ms per character when typing
+        const deleteSpeed = 40;    // ms per character when deleting
+        const holdTime = 1200;     // pause after a word is typed
+
+        let skillIndex = 0;
+        let charIndex = 0;
+        let typing = true;
+
+        function loop() {
+            const current = skills[skillIndex % skills.length];
+
+            if (typing) {
+                el.textContent = current.slice(0, charIndex + 1);
+                // elAside.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === current.length) {
+                    typing = false;
+                    setTimeout(loop, holdTime);
+                    return;
+                }
+                setTimeout(loop, typeSpeed);
+            } else {
+                el.textContent = current.slice(0, charIndex - 1);
+                // elAside.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    typing = true;
+                    skillIndex++;
+                }
+                setTimeout(loop, deleteSpeed);
+            }
+        }
+
+        // Respect reduced motion preferences
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced) loop();
+        else el.textContent = skills[0];
+    </script>
+</body>
+</html>

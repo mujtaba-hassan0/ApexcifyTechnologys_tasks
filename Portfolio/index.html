@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Rotating Skill Text (Tailwind)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Type cursor */
+        .type-cursor::after {
+            content: "|";
+            display: inline-block;
+            margin-left: 2px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+
+    <img id="downarrow" 
+     src="images/downicon.png" 
+     alt="" 
+     class="w-6 h-6 cursor-pointer block md:hidden mx-auto" />
+    <div id="topnav"  class="w-full flex-col justify-center p-4 bg-gray-900/60 border-b border-white/5 sticky top-0 z-10 h-auto hidden">
+        <div class="flex flex-col">
+            <div class="w-full flex justify-start">
+                <img id="crossicon" src="images/cross.png" alt="" class="w-4 h-4 cursor-pointer">
+            </div>
+            <h1 class="text-lg font-semibold">Mujtaba Hassan</h1>
+            <p class="text-sm text-gray-400 inline-block">Developer</p>
+
+        </div>
+
+        <div class="flex flex-col">
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="index.html">Home</a>
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="about.html">About</a>
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="projects.html">Projects</a>
+                <!-- <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="blog.html">Blog</a> -->
+                <a class="w-full hover:text-white transition hover:translate-x-1 hover:bg-blue-600 rounded-md hover:pl-2" href="contact.html">Contact</a>
+
+        </div>
+        
+    </div>
+    <div class="min-h-screen flex ">
+        <aside
+            class="hidden md:flex w-64 flex-col justify-center tems-center gap-4 bg-gray-900/60 border-r border-white/5 p-4 sticky top-0 h-screen">
+            <div class="width-[90%] h-[80%] border-2 border-cyan-700 rounded-2xl p-2 flex flex-col items-center justify-center gap-2">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400"></div>
+            <h1 class="text-lg font-semibold">Mujtaba Hassan</h1>
+            <p class="text-sm text-gray-400" >Developer</p>
+            <hr class="w-full border-white/12 my-4" />
+            <!-- contact info -->
+            <div class="w-full flex flex-col gap-3">
+                <!-- contact info card 1 -->
+                <div class="w-fit h-16 flex items-center gap-1 hover:scale-105 transition">
+                    <img src="images/email.png" alt="" class="w-8 h-8 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white"><a
+                            href="mailto:mujtabahassan326@gmail.com">mujtabahassan326@gmail.com</a></p>
+                </div>
+                <!-- contact info card 2 -->
+                <div class="w-fit h-16 flex items-center gap-1 hover:scale-105 transition">
+                    <img src="images/phone.png" alt="" class="w-8 h-8 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white">+92 309-3845919</p>
+                </div>
+                <!-- contact info card 3 -->
+                <div class="w-fit h-16 flex items-center gap-0 hover:scale-105 transition">
+                    <img src="images/linkdin.png" alt="" class="w-10 h-10 my-4 ">
+                    <p class="w-full text-[12px] font-semibold text-white"><a
+                            href="https://www.linkedin.com/in/mujtaba-hassan-4b43b0247/" target="blank">LinkdIn</a></p>
+                </div>
+
+            </div>
+</div>
+        </aside>
+       
+
+
+        <!-- Main -->
+        <main class="flex-1 pt-0 p-4 md:p-10 justify-between items-center">
+             
+            <!-- Top Nav -->
+            <nav class="flex items-center justify-between gap-6 text-sm text-gray-400 ">
+               
+                <div class="w-full  hidden md:flex items-center gap-4 justify-end">
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="index.html">Home</a>
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="about.html">About</a>
+                <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="projects.html">Projects</a>
+                <!-- <a class="hover:text-white transition border rounded-xl p-1 px-2  hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="blog.html">Blog</a> -->
+                <a class="hover:text-white transition border rounded-xl p-1 px-2 hover:px-2.5 hover:bg-blue-500 hover:font-bold" href="contact.html">Contact</a>
+                </div>
+            </nav>
+
+            <!-- Hero with animated rotating skill text -->
+            <section id="home" class="mt-16 md:mt-24">
+                <div class="max-w-3xl">
+                    <p class="text-sm uppercase tracking-widest text-blue-400/80">Hello</p>
+                    <h2 class="mt-3 text-4xl md:text-6xl font-extrabold leading-tight">
+                        I'm <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Mujtaba
+                            Hassan</span>
+                    </h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-300">
+                        I build reliable software solutions with clean code, efficient logic, and a focus on
+                        user-friendly experiences. <br class="hidden sm:block" />
+                        <span class="text-gray-400">Expertise:</span>
+                        <span id="skillRotator" class="font-semibold text-white type-cursor"></span>
+                    </p>
+
+                    <div class="mt-8 flex gap-3">
+                        <a href="Resume/Personal Resume.pdf" download target="_blank"
+                            class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition shadow-lg shadow-blue-600/20">Resume</a>
+                        <a href="#contact"
+                            class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition border border-white/10">Contact
+                            Me</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- filler sections just to show layout -->
+            <section id="about" class="w-full mt-28 ">
+                <div class="w-full p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
+                    <h3 class="text-xl font-semibold">About</h3>
+                    <p class="mt-2 text-gray-300">As an aspiring IT enthusiast, I am passionate about technology and its
+                        potential to solve real-world problems. I enjoy learning about new tools and frameworks, and I
+                        am always looking for opportunities to expand my skill set.</p>
+                </div>
+            </section>
+
+            <section id="projects" class="mt-28">
+                <h3 class="text-2xl font-bold">Projects</h3>
+                <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        class="group p-5 rounded-2xl bg-white/5 border border-white/10 hover:translate-y-[-2px] hover:shadow-xl transition">
+                        <div class="h-28 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20 img:hover:-scale-2"><img src="projects/single3.png" alt="" class="w-[100%] h-40 object-cover border rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-300"></div>
+                        <h4 class="mt-12 group-hover:mt-14  font-semibold transition-margin duration-300 text-blue-400 group-hover:text-blue-300">E-Commerce Website</h4>
+                        <p class="text-sm text-gray-400 mt-1">A E-Commerce website showcasing products. Made this project using HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div
+                        class="group p-5 rounded-2xl bg-white/5 border border-white/10 hover:translate-y-[-2px] hover:shadow-xl transition">
+                        <div class="h-28 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20"><img src="projects/single1.png" alt="" class="w-[100%] h-40 object-cover border rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-300"></div>
+                        <h4 class="mt-12 group-hover:mt-14  font-semibold transition-margin duration-300 text-blue-500 group-hover:text-blue-300">Brand Landing Page</h4>
+                        <p class="text-sm text-gray-400 mt-1">A landing page for a brand. Made this project using React.</p>
+                    </div>
+                    <div
+                        class="group p-5 rounded-2xl bg-white/5 border border-white/10 hover:translate-y-[-2px] hover:shadow-xl transition">
+                        <div class="h-28 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20"><img src="projects/multi-page.png" alt="" class="w-[100%] h-40 object-cover border rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-300"></div>
+                        <h4 class="mt-12 group-hover:mt-14  font-semibold transition-margin duration-300 text-blue-500 group-hover:text-blue-300">Restaurant Website</h4>
+                        <p class="text-sm text-gray-400 mt-1">A multi-page website for a restaurant, showcasing recipes, menus, and more. Made this project using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section id="blog" class="mt-28">
+                <h3 class="text-2xl font-bold">Blog: Building a Book Collection App in Java</h3>
+                <p class="mt-3 text-gray-300">In this blog post, I will walk you through the process of building a book collection app using Java. We will cover the key features of the app, including adding, removing, and viewing books in the collection.</p>
+                <a href="blog.html" class="mt-5 inline-block text-blue-400 hover:text-blue-300">Read more</a>
+            </section> -->
+
+            <section id="contact" class="mt-28 mb-20">
+                <h3 class="text-2xl font-bold">Contact</h3>
+                <p class="mt-3 text-gray-300"><a href="mailto:mujtabahassan326@gmail.com">Email: mujtabahassan326@gmail.com</a></p>
+                <p class="mt-3 text-gray-300"><a href="https://www.linkedin.com/in/mujtaba-hassan-4b43b0247/" target="blank" class="hover:underline">LinkdIn: Mujtaba Hassan</a></p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+
+        const el = document.getElementById('skillRotator');
+
+        const skills = [
+            'Web Development',
+            'Java Programmer',
+            'Data Structures & Algorithms',
+            'Spring Boot & REST APIs',
+            'Problem Solving'];
+
+        const typeSpeed = 55;      // ms per character when typing
+        const deleteSpeed = 40;    // ms per character when deleting
+        const holdTime = 1200;     // pause after a word is typed
+
+        let skillIndex = 0;
+        let charIndex = 0;
+        let typing = true;
+
+        function loop() {
+            const current = skills[skillIndex % skills.length];
+
+            if (typing) {
+                el.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === current.length) {
+                    typing = false;
+                    setTimeout(loop, holdTime);
+                    return;
+                }
+                setTimeout(loop, typeSpeed);
+            } else {
+                el.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    typing = true;
+                    skillIndex++;
+                }
+                setTimeout(loop, deleteSpeed);
+            }
+        }
+
+        // Respect reduced motion preferences
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced) loop();
+        else el.textContent = skills[0];
+    </script>
+    <script>
+       const downarrow = document.getElementById('downarrow');
+       const crossicon = document.getElementById('crossicon');
+       const topnav = document.getElementById('topnav');
+        let isOpen= false;
+
+
+        downarrow.addEventListener("click",()=>{
+            if(!isOpen){
+             downarrow.style.display="none";  
+             topnav.style.display="block"; 
+             isOpen=true;
+            }
+
+        });
+
+        crossicon.addEventListener("click",()=>{
+            if(isOpen){
+             downarrow.style.display="block";  
+             topnav.style.display="none"; 
+             isOpen=false;
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
