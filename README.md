@@ -39,7 +39,7 @@ portfolio/
 
 Clone this repository:
 
-git clone https://github.com/mujtaba-hassan0/ApexcifyTechnologys_tasks/Portfolio 
+git clone https://github.com/mujtaba-hassan0/ApexcifyTechnologys_tasks/tree/main/Portfolio
 
 
 Open any file (index.html, about.html, etc.) in your browser.
